@@ -24,7 +24,7 @@ const StackedPageWrapper = ({
 }) => (
   <PageIndexProvider value={i}>
     <div
-      className={`note-container md:max-w-xl px-4 overflow-y-auto bg-white md:sticky flex flex-col flex-shrink-0 ${
+      className={`note-container md:max-w-xl overflow-y-auto bg-white md:sticky flex flex-col flex-shrink-0 ${
         overlay ? "shadow-lg" : ""
       }`}
       style={{ left: 40 * i, right: -585, width: NOTE_WIDTH }}
@@ -72,16 +72,15 @@ const BrainNotesContainer = ({ slug, note, location, siteMetadata }) => {
     <div className="text-gray-900 flex flex-col min-h-screen h-screen">
       <Helmet>
         <meta charSet="utf-8" />
-        <title>
-          {note.title} - {siteMetadata.title}
-        </title>
+        <title>Brian's Notes</title>
       </Helmet>
-      <header>
-        <div className="font-bold py-2 border-b px-4">
-          <Link to="/" className="no-underline text-gray-900">
-            {siteMetadata.title}
-          </Link>
-        </div>
+      <header className="notes-header">
+        <Link to="/" className="logo">
+          Brian's Notes
+        </Link>
+        <a href="https://briansaunders.me" className="home-link">
+          Home
+        </a>
       </header>
 
       <div
