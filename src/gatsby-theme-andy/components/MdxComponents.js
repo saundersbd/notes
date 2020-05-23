@@ -34,7 +34,7 @@ const AnchorTag = ({ href, popups = {}, noPopups = false, ...restProps }) => {
         </div>
       }
     >
-      <a className="whitespace-no-wrap" {...restProps} href={href} />
+      <a {...restProps} href={href} className="external-link" />
     </Tippy>
   );
 };

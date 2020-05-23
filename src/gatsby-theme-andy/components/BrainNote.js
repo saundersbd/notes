@@ -46,10 +46,7 @@ const BrainNote = ({ note }) => {
       .filter((reference) => !!reference.childMdx.excerpt)
       .forEach((ln, i) => {
         popups[ln.slug] = (
-          <div
-            id={ln.slug}
-            className="w-64 p-4 bg-gray-100 rounded-lg shadow-lg border border-blue-200"
-          >
+          <div id={ln.slug} className="tooltip">
             <h5 className="reference-heading">{ln.title}</h5>
             <p className="reference-description">{ln.childMdx.excerpt}</p>
           </div>

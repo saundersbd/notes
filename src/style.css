@@ -16,13 +16,13 @@ body {
 
 h1 {
   font-size: 28px;
-  font-weight: bold;
+  font-weight: regular;
   line-height: 34px;
   margin-bottom: 16px;
 }
 h2 {
-  font-size: 25px;
-  line-height: 31px;
+  font-size: 22px;
+  line-height: 30px;
   margin-bottom: 16px;
 }
 h3 {
@@ -43,24 +43,42 @@ a {
 a:hover {
   @apply text-blue-700 no-underline;
 }
+.external-link:after {
+  display: inline-block;
+  content: " ";
+  background-image: url("../static/icons/external-link.svg");
+  background-repeat: no-repeat;
+  background-size: 14px 14px;
+  height: 14px;
+  width: 14px;
+  margin: 0 0 0 4px;
+}
 p {
   line-height: 24px;
   margin-bottom: 17px;
 }
 
 ul {
-  @apply list-disc pl-6;
+  list-style-type: disc;
   margin-bottom: 17px;
+  padding-left: 40px;
 }
-ul li ul {
-  margin-bottom: 4px;
+ul ul {
+  margin-bottom: 0;
+  margin-top: 0.5em;
+  list-style-type: circle;
 }
-li {
+ul li {
   line-height: 24px;
+  margin-bottom: 0.5em;
 }
 
 hr {
-  @apply my-4 border-gray-400;
+  margin-top: 2em;
+  margin-bottom: 1em;
+  height: 1px;
+  border: none;
+  background-color: #ddd;
 }
 
 .notes-header {
@@ -85,16 +103,16 @@ hr {
   border-left: 1px solid rgba(0, 0, 0, 0.05);
 }
 
+.note-container a {
+  text-decoration: none;
+}
+
 .note-container:first-child {
   border-left: none;
 }
 
 .note-body {
   @apply p-8;
-}
-
-.note-body a:visited {
-  @apply text-purple-600;
 }
 
 .note-footer {
@@ -150,7 +168,7 @@ hr {
 
 .reference-heading {
   font-size: 12px;
-  line-height: 16px;
+  line-height: 18px;
   margin-bottom: 8px;
 }
 
@@ -159,6 +177,15 @@ hr {
   font-size: 12px;
   line-height: 16px;
   margin-bottom: 0;
+}
+
+.tooltip {
+  background-color: #fff;
+  border-radius: 8px;
+  filter: drop-shadow(rgba(0, 0, 0, 0.08) 0px 0px 10px)
+    drop-shadow(rgba(0, 0, 0, 0.04) 0px 20px 50px)
+    drop-shadow(rgba(0, 0, 0, 0.15) 0px 0px 1px);
+  padding: 16px;
 }
 
 blockquote {
