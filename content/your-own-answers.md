@@ -11,3 +11,5 @@ When you do get answers from other people, try not to take them at face value. I
 ## References
 
 Kishimi, Ichiro., Koga, Fumitake. [The Courage to Be Disliked: The Japanese Phenomenon That Shows You How to Change Your Life and Achieve Real Happiness](https://www.amazon.com/Courage-Be-Disliked-Phenomenon-Happiness/dp/1501197274). United States: Atria Books, 2018.
+
+> Why are you rushing for answers? You should arrive at answers on your own, not rely upon what you get from someone else. Answers from others are nothing more than stopgap measures; they’re of no value.

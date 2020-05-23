@@ -8,4 +8,4 @@ A solution can be perfectly logically sound but that is irrelevant if that logic
 
 ## References
 
-Alexander, Christopher. Notes on the Synthesis of Form. United Kingdom: Harvard University Press, 1964.
+Alexander, Christopher. [Notes on the Synthesis of Form](https://www.amazon.com/Notes-Synthesis-Form-Harvard-Paperbacks/dp/0674627512). United Kingdom: Harvard University Press, 1964.
