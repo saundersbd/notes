@@ -30,10 +30,12 @@ const BrainNote = ({ note }) => {
 
     if (references.length > 0) {
       referenceBlock = (
-        <>
-          <h3>Referred in</h3>
-          <div className="reference-list">{references}</div>
-        </>
+        <div className="backlinks">
+          <div className="refs-box">
+            <h3>Referred in</h3>
+            <div className="reference-list">{references}</div>
+          </div>
+        </div>
       );
     }
   }
@@ -65,9 +67,8 @@ const BrainNote = ({ note }) => {
         <h1>{note.title}</h1>
         <MDXRenderer>{note.childMdx.body}</MDXRenderer>
       </div>
-      <div className="backlinks">
-        <div className="refs-box">{referenceBlock}</div>
-      </div>
+
+      {referenceBlock}
     </MDXProvider>
   );
 };
