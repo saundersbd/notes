@@ -7,7 +7,7 @@ import { LinkToStacked } from "react-stacked-pages-hook";
 import components from "gatsby-theme-andy/src/components/MdxComponents";
 import useWindowWidth from "../../utils/useWindowWidth";
 
-const NOTE_WIDTH = 576;
+const NOTE_WIDTH = 624;
 
 const BrainNote = ({ note }) => {
   const [width] = useWindowWidth();

@@ -10,7 +10,7 @@ import BrainNote from "./BrainNote";
 
 import "../../style.css";
 
-const NOTE_WIDTH = 576; // w-xl
+const NOTE_WIDTH = 624; // w-xl
 
 // A wrapper component to render the content of a page when stacked
 const StackedPageWrapper = ({
@@ -24,29 +24,15 @@ const StackedPageWrapper = ({
 }) => (
   <PageIndexProvider value={i}>
     <div
-      className={`note-container md:max-w-xl overflow-y-auto bg-white md:sticky flex flex-col flex-shrink-0 ${
-        overlay ? "shadow-lg" : ""
+      className={`note-container ${overlay ? "shadow-lg" : ""} ${
+        obstructed ? "note-container-obstructed" : ""
       }`}
-      style={{ left: 40 * i, right: -585, width: NOTE_WIDTH }}
+      style={{ left: 40 * i, right: -584, width: NOTE_WIDTH }}
     >
-      <div
-        className={`md:block hidden transition-opacity duration-100 ${
-          obstructed ? `opacity-100` : `opacity-0`
-        }`}
-      >
-        <div className={`transform rotate-90 origin-left pb-4 absolute z-10`}>
-          <LinkToStacked to={slug} className="no-underline text-gray-900">
-            <p className="m-0 font-bold">{title || slug}</p>
-          </LinkToStacked>
-        </div>
-      </div>
-      <div
-        className={`flex flex-col min-h-full transition-opacity duration-100 ${
-          obstructed ? `opacity-0` : `opacity-100`
-        }`}
-      >
-        {children}
-      </div>
+      <div className={`note-content`}>{children}</div>
+      <LinkToStacked to={slug} className="obstructed-label">
+        {title || slug}
+      </LinkToStacked>
     </div>
   </PageIndexProvider>
 );
@@ -69,7 +55,7 @@ const BrainNotesContainer = ({ slug, note, location, siteMetadata }) => {
   });
 
   return (
-    <div className="text-gray-900 flex flex-col min-h-screen h-screen">
+    <div className="layout">
       <Helmet>
         <meta charSet="utf-8" />
         <title>Brian's Notes</title>
@@ -83,12 +69,9 @@ const BrainNotesContainer = ({ slug, note, location, siteMetadata }) => {
         </a>
       </header>
 
-      <div
-        className="flex-1 flex flex-grow overflow-x-hidden md:overflow-x-auto overflow-y-hidden"
-        ref={scrollContainer}
-      >
+      <div className="outer-container" ref={scrollContainer}>
         <div
-          className="note-columns-container flex flex-grow transition-width duration-100"
+          className="note-columns-container"
           style={{ width: NOTE_WIDTH * (stackedPages.length + 1) }}
         >
           <ContextProvider value={{ stackedPages, navigateToStackedPage }}>

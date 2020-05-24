@@ -43,10 +43,15 @@ h6 {
   @apply text-xs mb-2 text-gray-900;
 }
 a {
-  @apply text-blue-500 underline;
+  @apply text-blue-500;
+  text-decoration: none;
 }
 a:hover {
-  @apply text-blue-700 no-underline;
+  @apply text-blue-700;
+  text-decoration: underline;
+}
+.external-link {
+  color: #888;
 }
 .external-link:after {
   display: inline-block;
@@ -86,15 +91,23 @@ hr {
   background-color: #e7e7e9;
 }
 
+.layout {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
 .notes-header {
   background-color: #fff;
   border-bottom: 1px solid rgba(0, 0, 0, 0.05);
   display: flex;
   flex-direction: row;
+  flex-basis: content;
   align-items: center;
   justify-content: space-between;
-  height: 48px;
+  min-height: 48px;
   padding: 0 32px;
+  width: 100%;
 }
 
 .notes-header .logo {
@@ -103,25 +116,61 @@ hr {
   text-decoration: none;
 }
 
-.note-container {
-  @apply p-0;
-  border-left: 1px solid rgba(0, 0, 0, 0.05);
+.outer-container {
+  display: flex;
+  flex-grow: 1;
+  overflow-x: auto;
+  overflow-y: hidden;
 }
 
-.note-container a {
-  text-decoration: none;
+.note-columns-container {
+  display: flex;
+  flex-grow: 1;
+  transition: width 100ms cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.note-container {
+  background: #fff;
+  border-left: 1px solid rgba(0, 0, 0, 0.05);
+  padding: 0;
 }
 
 .note-container:first-child {
   border-left: none;
 }
 
+.note-container .note-content,
+.note-container .obstructed-label {
+  transition: opacity 75ms linear;
+}
+
+.note-container .obstructed-label {
+  display: block;
+  color: #333;
+  writing-mode: vertical-lr;
+  line-height: 40px;
+  margin-top: 32px;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  position: absolute;
+  background-color: transparent;
+  width: 40px;
+  overflow: hidden;
+  opacity: 0;
+  transition: opacity 75ms linear;
+}
+
+.obstructed-label:hover {
+  text-decoration: none;
+}
+
 .note-body {
-  @apply p-8;
+  padding: 32px;
 }
 
 .note-footer {
-  @apply p-4;
+  padding: 16px;
 }
 
 .backlinks {
@@ -163,7 +212,7 @@ hr {
   border-radius: 8px;
   margin: 8px -8px 0;
   padding: 8px;
-  width: 266px;
+  width: 280px;
 }
 
 .reference-inner-block:hover {
@@ -199,79 +248,29 @@ blockquote {
   padding-left: 24px;
 }
 
-code {
-  @apply text-sm text-orange-800 bg-orange-100 px-1 -mx-1 rounded;
-}
+@media screen and (min-width: 801px) {
+  .note-container {
+    transition: box-shadow 100ms linear, opacity 75ms linear,
+      transform 200ms cubic-bezier(0.19, 1, 0.22, 1);
+    flex-shrink: 1;
+    width: 624px;
+    max-width: 624px;
+    top: 0px;
+    position: sticky;
+    flex-grow: 0;
+    overflow-y: auto;
+  }
 
-pre {
-  @apply mb-4;
-}
+  .note-container-overlay {
+    box-shadow: 0px 0px 15px 3px rgba(0, 0, 0, 0.1);
+  }
 
-pre > code {
-  @apply p-0 m-0 mb-2 bg-transparent;
-}
-
-@font-face {
-  font-family: "IBM Plex Sans";
-  font-style: normal;
-  font-weight: normal;
-  src: url("../static/fonts/webfonts/IBMPlexSans-Text.woff2") format("woff2"),
-    url("../static/fonts/webfonts/IBMPlexSans-Text.woff") format("woff"),
-    url("../static/fonts/webfonts/IBMPlexSans-Text.eot")
-      format("embedded-opentype");
-}
-
-@font-face {
-  font-family: "IBM Plex Sans";
-  font-style: italic;
-  font-weight: normal;
-  src: url("../static/fonts/webfonts/IBMPlexSans-TextItalic.woff2")
-      format("woff2"),
-    url("../static/fonts/webfonts/IBMPlexSans-TextItalic.woff") format("woff"),
-    url("../static/fonts/webfonts/IBMPlexSans-TextItalic.eot")
-      format("embedded-opentype");
-}
-
-@font-face {
-  font-family: "IBM Plex Sans";
-  font-style: normal;
-  font-weight: bold;
-  src: url("../static/fonts/webfonts/IBMPlexSans-Bold.woff2") format("woff2"),
-    url("../static/fonts/webfonts/IBMPlexSans-Bold.woff") format("woff"),
-    url("../static/fonts/webfonts/IBMPlexSans-Bold.eot")
-      format("embedded-opentype");
-}
-
-@font-face {
-  font-family: "IBM Plex Sans";
-  font-style: italic;
-  font-weight: bold;
-  src: url("../static/fonts/webfonts/IBMPlexSans-BoldItalic.woff2")
-      format("woff2"),
-    url("../static/fonts/webfonts/IBMPlexSans-BoldItalic.woff") format("woff"),
-    url("../static/fonts/webfonts/IBMPlexSans-BoldItalic.eot")
-      format("embedded-opentype");
-}
-
-@font-face {
-  font-family: "IBM Plex Serif";
-  font-style: normal;
-  font-weight: normal;
-  src: url("../static/fonts/webfonts/IBMPlexSerif-Text.woff2") format("woff2"),
-    url("../static/fonts/webfonts/IBMPlexSerif-Text.woff") format("woff"),
-    url("../static/fonts/webfonts/IBMPlexSerif-Text.eot")
-      format("embedded-opentype");
-}
-
-@font-face {
-  font-family: "IBM Plex Serif";
-  font-style: italic;
-  font-weight: normal;
-  src: url("../static/fonts/webfonts/IBMPlexSerif-TextItalic.woff2")
-      format("woff2"),
-    url("../static/fonts/webfonts/IBMPlexSerif-TextItalic.woff") format("woff"),
-    url("../static/fonts/webfonts/IBMPlexSerif-TextItalic.eot")
-      format("embedded-opentype");
+  .note-container-obstructed .note-content {
+    opacity: 0;
+  }
+  .note-container-obstructed .obstructed-label {
+    opacity: 1;
+  }
 }
 
 @tailwind components;
