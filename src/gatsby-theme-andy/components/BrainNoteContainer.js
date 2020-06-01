@@ -24,7 +24,7 @@ const StackedPageWrapper = ({
 }) => (
   <PageIndexProvider value={i}>
     <div
-      className={`note-container ${overlay ? "shadow-lg" : ""} ${
+      className={`note-container ${overlay ? "note-container-overlay" : ""} ${
         obstructed ? "note-container-obstructed" : ""
       }`}
       style={{ left: 40 * i, right: -584, width: NOTE_WIDTH }}
@@ -62,8 +62,10 @@ const BrainNotesContainer = ({ slug, note, location, siteMetadata }) => {
       </Helmet>
       <header className="notes-header">
         <Link to="/" className="logo">
+          <img src="/icons/file-text.svg" width="20" height="20" alt="" />
           Brian's Notes
         </Link>
+
         <a href="https://briansaunders.me" className="home-link">
           Home
         </a>

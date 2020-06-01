@@ -2,5 +2,13 @@ module.exports = {
   siteMetadata: {
     title: `Gatsby`,
   },
-  plugins: ["gatsby-theme-andy", `gatsby-plugin-postcss`],
+  plugins: [
+    {
+      resolve: `gatsby-theme-andy`,
+      options: {
+        hideDoubleBrackets: true,
+      },
+    },
+    `gatsby-plugin-postcss`,
+  ],
 };
