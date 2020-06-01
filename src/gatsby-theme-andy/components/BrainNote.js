@@ -4,7 +4,7 @@ import MDXRenderer from "gatsby-plugin-mdx/mdx-renderer";
 import { MDXProvider } from "@mdx-js/react";
 import { LinkToStacked } from "react-stacked-pages-hook";
 
-import components from "gatsby-theme-andy/src/components/MdxComponents";
+import components from "./MdxComponents";
 import useWindowWidth from "../../utils/useWindowWidth";
 
 const NOTE_WIDTH = 624;
@@ -59,7 +59,7 @@ const BrainNote = ({ note }) => {
   );
 
   return (
-    <MDXProvider components={{ a: AnchorTagWithPopups }}>
+    <MDXProvider components={{ ...components, a: AnchorTagWithPopups }}>
       <div className="note-body">
         <h1>{note.title}</h1>
         <MDXRenderer>{note.childMdx.body}</MDXRenderer>
