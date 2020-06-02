@@ -17,6 +17,7 @@ const AnchorTag = ({ href, popups = {}, noPopups = false, ...restProps }) => {
         content={popups[href.replace(/^\//, "")]}
         placement="right"
         animation="shift-away"
+        arrow
       >
         <LinkToStacked {...restProps} to={href} />
       </Tippy>
@@ -24,18 +25,7 @@ const AnchorTag = ({ href, popups = {}, noPopups = false, ...restProps }) => {
   return noPopups ? (
     <a {...restProps} href={href} />
   ) : (
-    <Tippy
-      placement="top"
-      animation="shift-away"
-      maxWidth="none"
-      content={
-        <div className="py-1 px-2 bg-white rounded text-sm text-blue-600 shadow">
-          {href}
-        </div>
-      }
-    >
-      <a {...restProps} href={href} className="external-link" />
-    </Tippy>
+    <a {...restProps} href={href} className="external-link" />
   );
 };
 
