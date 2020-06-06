@@ -1,0 +1,11 @@
+---
+title: "Sharing work is surrendering innocence"
+---
+
+You are living in an innocent, fairy tale world, until you actually present your solution to a problem and the logic that informs the solution. Once your work and the supporting logic are out in the open, they are also open to judgment. By providing clarity around previously vague thoughts and ideas, you are opening the door for criticism. In sharing your work, you surrender your innocence.
+
+As a designer, you have to become comfortable accepting that loss of innocence so you can grow personally, and so the team can make progress. It's hard to do. There is so much safety in not sharing your work and ideas. It's easy to hide behind a definition of design as a purely intuitive process that can't be understood by non-designers. You can play the part of the reclusive genius—a pretty comfortable role for most designers early in their careers. Rather than putting their work out in the open and accepting feedback that has implications on the design, a younger designer's natural tendency seems to be to work in secret and try to make their solution perfect before finally unveiling it.
+
+It's tough being the first one to share work on a complex problem. You suddenly find out that everyone has a lot of ideas about the things that are wrong with your work, and very little feedback or encouragement about what seems right. And it often feels like when you're the first one to share work you become the "owner" of it. By showing iniative and opening your garage door you tend to become the face of the project, which can feel like getting a lot more than you bargained for. Sometimes it seems like the lesson you learn is "That'll teach you to share work."
+
+My advice is that it's worth putting your work out there and losing that sense of innocence. It's worth becoming the face of an idea. Doing those things forces you to be accountable to the ideas that you bring into the world, and the feedback ultimately makes your understanding of and solution to the problems you're trying to solve better.

@@ -20,3 +20,5 @@ title: "Top-of-mind"
     - [[Arrive at your own answers]]
     - [[Cultivate a noticing habit]]
     - [[Are you really curious or just asking questions?]]
+    - [[Assume people are acting rationally]]
+    - [[Sharing work is surrendering innocence]]
